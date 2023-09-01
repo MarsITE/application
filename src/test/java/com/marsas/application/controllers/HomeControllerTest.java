@@ -15,14 +15,9 @@ class HomeControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Autowired
-    HomeController controller;
-
     @Test
-    void getHelloTest() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/hello"))
+    void getHomeTest() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/"))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 }
-
-
