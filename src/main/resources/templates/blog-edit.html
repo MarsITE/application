@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Editing Blog</h1>
+    <div th:each="el : ${post}">
+        <form method="post">
+            <input type="text" th:value="${el.title}" name="title" placeholder="Page name" class="form-control"><br>
+            <input type="text" th:value="${el.announce}" name="announce" placeholder="Page announce" class="form-control"><br>
+            <textarea name="fulltext" placeholder="Page full text" class="form-control" th:text="${el.fullText}"/><br>
+            <button type="submit" class="btn btn-success">Edit blog</button>
+            <br>
+        </form>
+    </div>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</html>

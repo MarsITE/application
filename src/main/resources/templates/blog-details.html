@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5">
+    <div th:each="el : ${post}" class="alert alert-info mt-2">
+        <h3 th:text="${el.title}"/>
+        <h3 th:text="${el.announce}"/>
+        <p th:text="${el.fullText}"/>
+        <p><b>Views:</b> <span th:text="${el.views}"/></p>
+        <a th:href="'/blog/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
+        <form th:action="'/blog/' + ${el.id} + '/remove'" method="post">
+            <button class="btn btn-warning" type="submit">Delete</button>
+        </form>
+
+    </div>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</html>

@@ -19,4 +19,13 @@ public class Post {
     private String fullText;
 
     private int views;
+
+    public Post() {
+    }
+
+    public Post(String title, String announce, String fullText) {
+        this.title = title;
+        this.announce = announce;
+        this.fullText = fullText;
+    }
 }
